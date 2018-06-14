@@ -10,8 +10,7 @@ using System.Web;
 namespace MVCproject.Controllers
 {
     public class HomeController : Controller
-    {
-        
+    {        
         public ActionResult Calculate(string x, string y, string action)
         {
             if (Request.HttpContext.Request.Method == "POST")
@@ -20,31 +19,24 @@ namespace MVCproject.Controllers
                 int b = int.Parse(y);
                 switch (action)
                 {
-                    case "Add":
-                        int sum = a + b;
-                        ViewBag.res = sum;
-                        break;
-                    case "Sub":
-                        int diff = a - b;
-                        ViewBag.res = diff;
-                        break;
-                    case "Mul":
-                        int product = a * b;
-                        ViewBag.res = product;
-                        break;
-                    case "Div":
-                        int div = a / b;
-                        ViewBag.res = div;
-                        break;
-
+                    case "Add": int sum = a + b;
+                                ViewBag.res = sum;
+                                break;
+                    case "Sub": int diff = a - b;
+                                ViewBag.res = diff;
+                                break;
+                    case "Mul": int product = a * b;
+                                ViewBag.res = product;
+                                break;
+                    case "Div": int div = a / b;
+                                ViewBag.res = div;
+                                break;
                 }
                 // to retain the input values in the textbox
                 ViewBag.first = a;
                 ViewBag.second = b;
-
             }
             return View();
         }
-
     }
 }

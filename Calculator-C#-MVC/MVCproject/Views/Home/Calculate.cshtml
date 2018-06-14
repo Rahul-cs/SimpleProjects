@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Calculate";
+}
+<h2>Calculator in MVC</h2>
+@using (Html.BeginForm())
+{
+    <table style="width:100%;">
+        <tr><td>Value 1:</td><td><input id="Text1" name="x" type="text" value="@ViewBag.first" /></td></tr>
+        <tr>
+            <td>Value 2:</td>
+            <td><input id="Text2" name="y" type="text" value="@ViewBag.second" /></td>
+        </tr>
+    </table>
+
+    <input id="Add" name="action" type="submit" value="Add" />
+    <input id="Sub" name="action" type="submit" value="Sub" />
+    <input id="Mul" name="action" type="submit" value="Mul" />
+    <input id="Div" name="action" type="submit" value="Div" />
+    <br />
+    <br />
+    <div>Result: </div>
+    <input id="Text3" type="text" value="@ViewBag.res" />
+
+}
